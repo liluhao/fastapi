@@ -3,7 +3,7 @@
 
 ### 功能一
 
-* 用于快速构建 API ，相比于传统的**type HandlerFunc func(*Context)**处理函数Handler，本项目在使用处理函数Handler时候，不仅仅可以传入Context，还可以传入结构体struct，即如下
+* 用于快速构建 API ，相比于传统的“type HandlerFunc func(*Context)”处理函数Handler，本项目在使用处理函数Handler时候，不仅仅可以传入Context，还可以传入结构体struct，即如下
 
 ```go
 func(ctx *gin.Context, in struct{}) (out struct{}, err error) { return }
