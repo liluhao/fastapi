@@ -150,7 +150,7 @@ func main() {
 
 
 
-<img src="https://user-images.githubusercontent.com/677093/146807480-be53b3fb-6de8-451f-8373-e8d6da54a032.png" width="400px" height="auto">
+<img src="https://mdmdmdmd.oss-cn-beijing.aliyuncs.com/img/146807480-be53b3fb-6de8-451f-8373-e8d6da54a032.png" width="400px" height="auto">
 
 ## Dependencies
 
@@ -159,4 +159,3 @@ func main() {
 
 * github.com/go-openapi/spec v0.20.4
 
-## 
