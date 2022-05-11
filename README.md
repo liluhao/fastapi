@@ -67,7 +67,7 @@ $  curl -H "Content-Type: application/json" -X POST --data '{"phrase": "hello"}'
 
 ### 展示功能二
 
-运行如下代码：
+> 运行如下代码：
 
 ```go
 package main
@@ -105,7 +105,7 @@ func main() {
 
 ```
 
-控制台输出如下：
+> 控制台输出如下：
 
 ```go
 {
