@@ -1,21 +1,21 @@
-# go-fastapi
-## Introduction
+# fastapi
+## 项目介绍
 
-go-fastapi is a library to quickly build APIs. 
+### 功能一
 
-Create an API and get Swagger definition for free
+* 用于快速构建 API ，相比于传统的**type HandlerFunc func(*Context)**处理函数Handler，本项目在使用处理函数Handler时候，不仅仅可以传入Context，还可以传入结构体struct，即如下
 
-## Features
+```go
+func(ctx *gin.Context, in struct{}) (out struct{}, err error) { return }
+```
 
-* Auto-generated OpenAPI/Swagger schema without any markup
-* Declare handlers using types, not just `Context`
-* Based on [gin](https://github.com/gin-gonic/gin) framework
+### 功能二
 
-> [OpenAPI 规范 (中文版) (apifox.cn)](https://openapi.apifox.cn/)
+* 创建一个 API后可以 获取 Swagger 定义的JSON序列,即可以无需任何标记的自动生成API的 OpenAPI/Swagger 架构
 
-## Example
+## 项目使用例子
 
-### 1.Declare handlers using types, not just `Context`
+### 展示功能一
 
 ```go
 package main
@@ -50,10 +50,14 @@ func main() {
 
 ```
 
-```GO
+> 正确请求如下：
+
+```go
 $ curl -H "Content-Type: application/json" -X POST --data '{"phrase": "hello"}' localhost:8080/api/echo
 //     {"response":{"original_input":{"phrase":"hello"}}}
 ```
+
+> 任举一种错误请求
 
 ```GO
 $  curl -H "Content-Type: application/json" -X POST --data '{"phrase": "hello"}' localhost:8080/api/echoaDASD
@@ -61,7 +65,9 @@ $  curl -H "Content-Type: application/json" -X POST --data '{"phrase": "hello"}'
 
 ```
 
-### 2.To generate OpenAPI/Swagger schema:
+### 展示功能二
+
+运行如下代码：
 
 ```go
 package main
@@ -92,11 +98,14 @@ func main() {
 
 	swagger := myRouter.EmitOpenAPIDefinition()
 	swagger.Info.Title = "My awesome API"
+	//func MarshalIndent(v interface{}, prefix, indent string) ([]byte, error): MarshalIndent类似Marshal但会使用缩进将输出格式化。
 	jsonBytes, _ := json.MarshalIndent(swagger, "", "    ")
 	fmt.Println(string(jsonBytes))
 }
 
 ```
+
+控制台输出如下：
 
 ```go
 {
@@ -152,7 +161,7 @@ func main() {
 
 <img src="https://mdmdmdmd.oss-cn-beijing.aliyuncs.com/img/146807480-be53b3fb-6de8-451f-8373-e8d6da54a032.png" width="400px" height="auto">
 
-## Dependencies
+## 项目开发依赖
 
 * go 1.18
 * github.com/gin-gonic/gin v1.7.7

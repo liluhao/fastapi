@@ -5,10 +5,6 @@ import (
 	"testing"
 )
 
-type InnerStruct struct {
-	XYZ string `json:"XYZ"`
-}
-
 type In struct {
 	Input string          `json:"input"`
 	X     int             `json:"x"`
@@ -18,13 +14,17 @@ type In struct {
 	J     map[string]int8 `json:"j"`
 }
 
+type Out struct {
+	Output string `json:"output"`
+}
+
 type In2 struct {
 	InputTwo string      `json:"input_two"`
 	Inner    InnerStruct `json:"-"`
 }
 
-type Out struct {
-	Output string `json:"output"`
+type InnerStruct struct {
+	XYZ string `json:"XYZ"`
 }
 
 func RequestHandler(ctx *gin.Context, in In) (out Out, err error) {

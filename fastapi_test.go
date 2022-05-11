@@ -42,5 +42,5 @@ func TestInvalidHandler6(t *testing.T) {
 }
 
 func TestCorrectHandler(t *testing.T) {
-	NewRouter().AddCall("x", func(ctx *gin.Context, in struct{}) (out struct{}, err error) { return })
+	NewRouter().AddCall("x", func(ctx *gin.Context, in struct{}) (out struct{}, err error) { return }) //只有这个是正确的
 }
