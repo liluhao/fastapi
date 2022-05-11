@@ -2,10 +2,9 @@ package fastapi
 
 import (
 	"fmt"
+	openapi "github.com/go-openapi/spec"
 	"net/http"
 	"reflect"
-
-	openapi "github.com/go-openapi/spec"
 )
 
 func (r *Router) EmitOpenAPIDefinition() openapi.Swagger {
