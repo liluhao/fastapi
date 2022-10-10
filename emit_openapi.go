@@ -8,6 +8,7 @@ import (
 )
 
 func (r *Router) EmitOpenAPIDefinition() openapi.Swagger {
+	//111111111
 	sw := openapi.Swagger{}
 	sw.Swagger = "2.0"
 	sw.Info = &openapi.Info{}
